@@ -17,4 +17,4 @@ define('LOG_FILE', __DIR__ . '/logs/app.log');
 define('HASH_COST', 12);
 define('SESSION_LIFETIME', 3600);
 define('SESSION_NAME', 'ipmi_session');
-// LOG_ACTIONS es opcional; no se define aquí para que PHPStan respete la guarda defined()
+// LOG_ACTIONS is optional; not defined here so PHPStan respects the defined() guard

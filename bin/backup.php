@@ -27,7 +27,7 @@ if (!getenv('IPMI_ENCRYPTION_KEY') && getenv('ENCRYPTION_KEY')) {
 
 // Fallback: read directly from Apache SSL conf for CLI runs
 if (!getenv('IPMI_ENCRYPTION_KEY')) {
-    $apacheConf = '/etc/httpd/conf.d/atlas-le-ssl.conf';
+    $apacheConf = getenv('APACHE_VHOST_CONF') ?: '/etc/httpd/conf.d/ipmi-panel-ssl.conf';
     if (file_exists($apacheConf)) {
         preg_match('/SetEnv\s+IPMI_ENCRYPTION_KEY\s+"([^"]+)"/', file_get_contents($apacheConf), $m);
         if (!empty($m[1])) {

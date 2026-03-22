@@ -46,7 +46,7 @@ if ($currentUser) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
-    <!-- Hyperexpert theme CSS -->
+    <!-- Theme CSS -->
     <link rel="stylesheet" href="<?php echo $themeBase; ?>/css/styles.css">
     <link rel="stylesheet" href="<?php echo $themeBase; ?>/css/styles_responsive.css">
     <?php if (!$currentUser): ?>
@@ -295,7 +295,7 @@ if ($currentUser) {
         .status-pill.online      { background: rgba(39,174,96,.10);  color: var(--panel-ok); }
         .status-pill.offline     { background: rgba(231,76,60,.10);  color: var(--panel-danger); }
         .status-pill.maintenance { background: rgba(230,126,34,.10); color: var(--panel-warn); }
-        /* dot semántico dentro del status-pill */
+        /* semantic dot inside status-pill */
         .status-dot {
             width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
             display: inline-block;
@@ -489,7 +489,7 @@ if ($currentUser) {
             .sidebar { width: 230px; min-width: 230px; }
         }
 
-        /* ─── Hamburger button (solo visible en móvil/tablet) ────── */
+        /* ─── Hamburger button (mobile/tablet only) ────── */
         .topbar-hamburger {
             display: none;
             align-items: center;
@@ -539,7 +539,7 @@ if ($currentUser) {
                 overflow-y: auto;
             }
 
-            /* Cuando está abierto */
+            /* When sidebar is open */
             .panel-shell.sidebar-open .sidebar          { transform: translateX(0); }
             .panel-shell.sidebar-open .sidebar-backdrop { display: block; }
 
