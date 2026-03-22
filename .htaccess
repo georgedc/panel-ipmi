@@ -1,0 +1,71 @@
+<Files ".env">
+    Require all denied
+</Files>
+<Files ".env.*">
+    Require all denied
+</Files>
+<Files "*.backup">
+    Require all denied
+</Files>
+<Files "*.log">
+    Require all denied
+</Files>
+
+Options -Indexes
+
+# ── Compresión de texto ────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json text/plain text/xml application/xml
+</IfModule>
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json text/plain text/xml application/xml
+</IfModule>
+
+# ── Cache para assets estáticos ────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css                  "access plus 1 month"
+    ExpiresByType application/javascript    "access plus 1 month"
+    ExpiresByType image/png                 "access plus 1 month"
+    ExpiresByType image/x-icon              "access plus 1 month"
+    ExpiresByType font/woff2                "access plus 1 year"
+</IfModule>
+
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} \s/+ipmi-panel/internal/ [NC]
+RewriteRule ^internal/ - [F,L,END]
+
+# Todo via front controller
+RewriteRule ^ipmi_kvm\.php$ index.php?route=/runtime/ipmi-kvm [END,QSA]
+RewriteRule ^sso_kvm\.php$ index.php?route=/runtime/sso-kvm [END,QSA]
+RewriteRule ^bmc_proxy\.php$ index.php?route=/runtime/bmc-proxy [END,QSA]
+RewriteRule ^bmc/(\d+)/(.+)$ index.php?route=/runtime/bmc-proxy&server_id=$1&path=/$2 [END,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^$ index.php?route=/ [END,QSA]
+RewriteRule ^([A-Za-z0-9_\-\/]+)$ index.php?route=/$1 [END,QSA]
+
+# Endpoint WHMCS: IPs permitidas se configuran en atlas-le-ssl.conf (SetEnvIf IPMI_WHMCS_IP)
+<Files "whmcs_ipmi_endpoint.php">
+    Require env IPMI_WHMCS_IP
+</Files>
+
+# Endpoints publicos necesarios para el flujo SSO/KVM.
+# La autorizacion se hace por URL publica, no por el archivo interno reescrito.
+SetEnvIf Request_URI "^/ipmi-panel/ipmi_kvm\.php$" ALLOW_PUBLIC=1
+SetEnvIf Request_URI "^/ipmi-panel/sso_kvm\.php$" ALLOW_PUBLIC=1
+SetEnvIf Request_URI "^/ipmi-panel/bmc_proxy\.php$" ALLOW_PUBLIC=1
+SetEnvIf Request_URI "^/ipmi-panel/bmc/" ALLOW_PUBLIC=1
+
+# Assets estaticos publicos (CSS, JS, imagenes, fuentes del theme)
+SetEnvIf Request_URI "^/ipmi-panel/themes/" ALLOW_PUBLIC=1
+SetEnvIf Request_URI "^/ipmi-panel/css/" ALLOW_PUBLIC=1
+SetEnvIf Request_URI "^/ipmi-panel/js/" ALLOW_PUBLIC=1
+SetEnvIf Request_URI "^/ipmi-panel/public/" ALLOW_PUBLIC=1
+
+# IPs de admin se configuran en atlas-le-ssl.conf (SetEnvIf IPMI_PANEL_ADMIN)
+<RequireAny>
+    Require env ALLOW_PUBLIC
+    Require env IPMI_PANEL_ADMIN
+</RequireAny>

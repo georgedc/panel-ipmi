@@ -1,0 +1,481 @@
+@media only screen and (max-width: 1400px) { 
+	.auth_form_wrap {
+		padding:100px 40px;
+	}
+	header, footer {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	.main-content {
+		padding:80px 40px;
+	}
+	.sidebar {
+		padding-left:40px;
+		width:270px;
+	}
+	.sidebar-referfriend {
+		left:-20px;
+	}
+	.popup_menu {
+		right:32px;
+	}
+	.notifications_wrap {
+		right:94px;
+	}
+}
+@media only screen and (max-width: 1280px) { 
+	.menu-responsive {
+		display:block;
+	}
+	.table_layout {
+		table-layout: auto;
+	}
+	.service-info {
+		flex-wrap:wrap;
+		margin-bottom:40px;
+	}
+	.service-payment-details {
+		margin-left:0;
+		margin-top:40px;
+		text-align: center;
+	}
+	.service-payment-details-wrap {
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.service-info-wrap {
+		width:100%;
+		justify-content: space-between;
+	}
+	.service-info-item {
+		margin-right:0;
+		width:calc(50% - 10px);
+	}
+	.service-payment-details-item-cancel {
+		margin:0 auto;
+	}
+	.sidebar {
+		display:none;
+	}
+	.main-content {
+    	border-left: none;
+    	width: 100%;
+	}
+	.auth_form {
+		width:100%;
+	}
+}
+@media only screen and (max-width: 1080px) { 
+	.popup_menu {
+		right:52px;
+	} 
+	td {
+		width:100%;
+	}
+	.main-content {
+		border:none;
+		width:100%;
+		min-height:auto;
+	}
+	.main-content:before, .main-content:after {
+		display:none;
+	}
+	.page_header_wrap {
+		flex-wrap: wrap;
+	}
+	.page_header_right {
+		display:block;
+		text-align: right;
+	}
+	.page_header_right>div {
+		margin-left:0;
+	}
+	.page_header_right>div:first-child {
+		margin-bottom:10px;
+	}
+	section>div:before {
+		display:none;
+	}
+	.dash-tables-2 {
+		flex-wrap:wrap;
+	}
+	.dash-tables-2>div {
+		width:100%;
+	}
+	.auth_page_wrap {
+		flex-wrap:wrap;
+	}
+	.auth-design, .auth_form_wrap {
+		width:100%;
+	}
+	.auth-design {
+		min-height: 400px;
+	}
+	.auth-design-login {
+		background-position:center bottom calc(50% - 40px);
+	}
+}
+@media (max-width: 960px) {
+
+    .invoice-header .invoice-col:first-child {
+		margin-bottom:40px;
+	}
+	.payment_gateway {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.payment_gateway_buttons {
+		align-items: center;
+		margin:20px auto 0;
+		flex-direction: column;
+        padding-left:20px;
+        padding-right:20px;
+	}
+	.credit_buttons {
+		width:100%;
+		margin:auto;
+	}
+	.payment_gateway_buttons>form {
+		margin-bottom:6px;
+	}
+	.payment_gateway_buttons table tr {
+		display:flex;
+		flex-direction: column;
+        align-items: center;
+	}
+	.payment_gateway_buttons table td {
+		padding:5px !important;
+        max-width: max-content;
+        width: 100% !important;
+	}
+}
+@media only screen and (max-width: 860px) {
+	body {
+		font-size:14px;
+		padding: 0 20px 60px;
+	}
+	header,footer {
+		padding-left:20px;
+		padding-right:20px;
+	}
+	.page_header {
+		font-size:24px;
+	}
+	.page_header_right {
+		margin-top:20px;
+		font-size:16px;
+	}
+	td:first-child {
+		font-size:inherit;
+	}
+	.dash_top {
+		flex-wrap: wrap;
+	}
+	.dash_top a, .dash_top>div {
+		margin: 0 0 30px;
+		width:100%
+	}
+	#tableInvoicesList {
+		table-layout: fixed;
+	}
+	.col-2 {
+		width:100%;
+	}
+}
+@media only screen and (max-width: 760px) { 
+	.popup_menu {
+		right:22px;
+	}
+	.main-content {
+		padding: 60px 30px;
+	}
+	.referral-3, .referral-2 {
+		flex-wrap:wrap;
+	}
+	.referral-3>div, .referral-2>div{
+		width:100%;
+		margin:10px 0;
+	}
+	table {
+		table-layout: fixed;
+	}
+	.table_layout {
+		table-layout: fixed;
+	}
+	th {
+		display: none;
+		padding:16px 10px;
+	}
+	td {
+		display:none;
+		padding:16px 10px;
+	}
+	th:first-child,td:first-child{
+		width:65% !important;
+		text-align:left;
+	}
+	th:nth-child(2),td:nth-child(2) {
+		width:35% !important;
+		text-align:right;
+	}
+	th:first-child, th:nth-child(2), td:first-child, td:nth-child(2) {
+		display: table-cell;
+	}
+	
+	.support_addmore {
+		display: block;
+		text-align: center;
+	}
+	.invoice_top {
+		flex-direction: column;
+	}
+	.invoice_top>div {
+		width:100%;
+	}
+	.invoice_top>div:first-child {
+		margin-bottom:20px;
+	}
+	.support_addmore a {
+		display: block;
+		margin:20px 0 10px;
+	}
+	div.dataTables_paginate {
+		width: 100%;
+		text-align: right;
+	}
+	.pagination {
+		margin:20px;
+		padding:0;
+	}
+	.dataTables_length {
+		width: 100%;
+    	text-align: center;
+		padding:20px;
+	}
+	.footer_links_wrap {
+		justify-content: space-around;
+		flex-flow: row wrap;
+		padding-right: 0;
+	}
+	.footer_links_wrap>a {
+		width: 45%;
+		height: 40px;
+		text-align: center;
+		margin: 14px 0 0;
+		background-position: center;
+		flex: none;
+	}
+	.footer_links_wrap>div {
+		width: 45%;
+		text-align: center;
+		margin: 10px 0;
+	}
+	.footer_connect {
+		text-align: center;
+	}
+	.two-manage-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.two-manage-buttons a:first-child{
+		margin:0;
+		margin-bottom:10px;
+	}
+	.notifications_wrap {
+		left: 20px;
+		right: 20px;
+		width: calc(100% - 40px);
+		margin:0;
+	}
+}
+@media only screen and (max-width: 680px) { 
+	.md-editor>.md-header {
+		flex-direction: column;
+	}
+	.md-header button[type=button] {
+		font-size:14px;
+	}
+	.md-editor .btn-group {
+		width: 100%;
+		border: 0;
+		border-bottom: 1px solid rgba(0, 0, 0, .1);
+	}
+	.md-editor .md-controls {
+		padding: 10px 10px 2px;
+	}
+	.md-editor.md-fullscreen-mode .md-header {
+		text-align: left;
+	}
+	.affiliate-stat {
+		width: 100%;
+		border-right: 0;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+	}
+	.nav {
+		border-bottom:0;
+		display: flex;
+    	flex-flow: column;
+	}
+	.nav_item {
+		padding: 14px 0 ;
+		margin: 0;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+	}
+	.flex-row {
+		flex-direction: column;
+	}
+	.flex-row select {
+		margin:10px 0;
+	}
+	.auth_error {
+		margin-top:20px;
+	}
+}
+@media only screen and (max-width: 640px) { 
+	.page_title {
+		font-size:32px;
+	}
+	.brand_logos {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	.payment_logos {
+		margin: 0 10% 10px;
+	}
+	.footer_bottom {
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	.copyrights {
+		text-align: center;
+	}
+	.footer_bottom a {
+		margin: 20px 0 0;
+		width: 100%;
+		text-align: center;
+	}
+	.other-modules-box {
+		flex-flow:column;
+		text-align: center;
+	}
+	.other-modules-box label {
+		margin-top:20px;
+		margin-left:0;
+	}
+}
+@media only screen and (max-width: 560px) {
+	body {
+		padding: 0 0 60px;
+	}
+	header,footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#tableInvoicesList {
+		table-layout: fixed;
+	}
+	.dash_services {
+		width:100%;
+	}
+	.dash_addnew {
+		width: 100%;
+		margin-top: 24px;
+	}
+	.support_dept_wrap div {
+		width:100%;
+	}
+	.form-group {
+		margin-left:0;
+		margin-right:0;
+	}
+	.col-3 {
+		width:100%;
+	}
+	.security-providers .providerPreLinking {
+		width:100%;
+	}
+	.invoice_content_titles {
+		flex-direction: column;
+	}
+	.invoice_amount_title {
+		margin: unset;
+	}
+	.invoice_product {
+		padding: 16px 0 0;
+	}
+	.invoice_line {
+		flex-direction: column;
+		align-items: normal;
+	}
+	.invoice_totals div {
+		display: flex;
+		flex-direction: column;
+	}
+	.invoice_totals span:first-child {
+		text-align: left;
+		padding: 10px 10px 0px;
+		width:100%;
+	}
+	.invoice_totals span:last-child {
+		padding: 0 10px 10px;
+		width:100%;
+	}
+	.dnr {
+		display: flex;
+		align-items: flex-start;
+		padding: 0;
+		flex-flow: column;
+	}
+	.dnr div, .dnr a {
+		width:100%;
+	}
+	.referral-img {
+		height:240px;
+	}
+}
+@media only screen and (max-width: 516px) {
+	.service-info-wrap {
+		flex-wrap: wrap;
+	}
+	.service-info-item {
+		width:100%;
+		margin-bottom:20px;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.ticket-reply .type {
+		flex-wrap:wrap;
+	}
+	.ticket-reply .date {
+		width: 100%;
+		margin-left: 48px;
+	}
+}
+@media only screen and (max-width: 460px) {
+	.table_top {
+    	display: block;
+	}
+	.table_top_right {
+		text-align: center;
+		margin-top: 10px;
+	}
+	.auth_form {
+		width:100%;
+	}
+	.service-payment-details-wrap {
+		flex-wrap: wrap;
+	}
+	.service-payment-details-item {
+		width:100%;
+		margin-bottom:40px;
+	}
+	.service-info {
+		margin-bottom:0;
+	}
+}
+@media only screen and (max-width: 420px) {
+
+}

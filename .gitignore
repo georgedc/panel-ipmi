@@ -1,0 +1,44 @@
+# Archivos de configuración sensibles
+.env
+*.backup
+
+# Archivos de log
+logs/
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+cookies.txt
+cookie-debug.txt
+debug_token.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Directorios de dependencias
+/vendor/
+node_modules/
+
+# Archivos de caché
+cache/
+*.cache
+
+# Archivos de backup de editor
+*~
+*.bak
+*.swp
+*.swo
+
+# Archivos de subida (excepto directorio base)
+uploads/*
+!uploads/.gitkeep
+
+# Archivos de testing en producción
+tests_backup/
+utils_backup/
+
+# Backups
+storage/backups/*
+!storage/backups/.gitkeep
