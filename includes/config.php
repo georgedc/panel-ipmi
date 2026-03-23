@@ -78,26 +78,7 @@ function getPeerTlsFingerprint(string $host, int $port = 443, int $timeout = 12)
         return normalizeTlsFingerprint($fingerprint);
     }
 
-    $opensslCommand = sprintf(
-        "timeout %d bash -lc 'echo | openssl s_client -connect %s:%d -servername %s 2>/dev/null | openssl x509 -noout -fingerprint -sha256'",
-        max(18, $timeout + 6),
-        escapeshellarg($host),
-        $port,
-        escapeshellarg($host)
-    );
-    $opensslOutput = [];
-    $opensslReturnCode = 1;
-    exec($opensslCommand, $opensslOutput, $opensslReturnCode);
-    if ($opensslReturnCode === 0) {
-        $line = trim(implode("\n", $opensslOutput));
-        if (preg_match('/Fingerprint=([A-Fa-f0-9:]+)/', $line, $matches)) {
-            $fingerprint = normalizeTlsFingerprint($matches[1]);
-            if ($fingerprint !== '') {
-                return $fingerprint;
-            }
-        }
-    }
-
+   
     throw new RuntimeException($lastError);
 }
 
