@@ -133,7 +133,7 @@ function logApiEvent($userId, $serverId, $action): void {
 function executeIPMICommand(array $server, string $command): array {
     $ipmiPassword = decryptPassword($server['ipmi_password'] ?? '');
     $ipmiCommand = sprintf(
-        'sudo /usr/bin/ipmitool -I lanplus -H %s -p %d -U %s -P %s %s 2>&1',
+        'timeout 10 sudo /usr/bin/ipmitool -I lanplus -H %s  -p %d -U %s -P %s %s 2>&1',
         escapeshellarg(trim((string) ($server['ip_address'] ?? ''))),
         (int) ($server['ipmi_port'] ?? 623),
         escapeshellarg((string) ($server['ipmi_username'] ?? '')),
