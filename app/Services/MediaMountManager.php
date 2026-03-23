@@ -540,10 +540,7 @@ class MediaMountManager
 
         $response = $this->curlResponse('https://' . $session['ip'] . $path, $options);
         if ($response['http_code'] !== 200) {
-            if (strpos($path, '/api/settings/media/remote/') !== false) {
-                @file_put_contents('/tmp/asrock_media_debug.log', date('c') . ' PATH=' . $path . ' HTTP=' . $response['http_code'] . ' BODY=' . substr($response['body'], 0, 1000) . PHP_EOL, FILE_APPEND);
-            }
-            $decodedError = json_decode($response['body'], true);
+             $decodedError = json_decode($response['body'], true);
             if ($path === '/api/settings/media/remote/start-media' && is_array($decodedError) && (int) ($decodedError['code'] ?? 0) === 13410) {
                 throw new Exception(__('iso.asrock_start_media_failed_13410'));
             }
