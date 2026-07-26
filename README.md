@@ -52,6 +52,12 @@ Linux only. Tested on:
 
 ---
 
+## screenshoot
+
+![Dashboard](docs/images/panel1.jpeg)
+
+![Gestión de VPS](docs/images/panel2.jpeg)
+
 ## Installation
 
 ```bash
